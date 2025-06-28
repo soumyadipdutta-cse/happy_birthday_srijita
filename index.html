@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🎵 Birthday Song (with manual Play button) -->
+  <audio id="birthday-audio" loop>
+    <source src="bday_song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <button onclick="document.getElementById('birthday-audio').play()" class="play-btn">
+    ▶️ Play Birthday Song
+  </button>
+
+  <!-- 🎂 Main Birthday Card -->
+  <div class="container">
+    <h1 class="animated-text">🎂 Happy Birthday, Gulu Gulu, Bhodlu, CutiePie, MSB! 🎂🎉</h1>
+
+    <p class="message animated-fadein">
+      On this special day, I wish my kissi taker a heart full of smiles and a year full of success. <br>
+      Keep shining, keep growing! 💖✨<br><br>
+      I love you so much. Your smile, your silliness, and your softest heart make this world a better place. <br>
+      May this birthday open up new chapters of happiness, laughter, and endless love. ❤️❤️❤️<br>
+     😘 My Gulu Gulu makes me smile always I see her, also we have fights but we love each other very much. May our bond continue to grow stronger with each passing year. 🌟💕
+    </p>
+
+    <img src="pic1.jpeg" alt="Birthday Pic 1" class="cake-img" />
+    <img src="pic2.jpg" alt="Birthday Pic 2" class="cake-img" />
+
+    <p class="footer animated-slideup">With love,<br>~ Pyarelal(Your Kissi giver) 😘</p>
+  </div>
+
+  <!-- 🎈 Balloons Animation -->
+    <div class="balloons">🎈 🎈 🎈 🎈 🎈</div>
+    <div class="floating-icons">🎂 🎁 🎂 🎁 🎂</div>
+
+
+
+  <script>
+  // Play audio on first interaction
+  document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("birthday-audio");
+
+    // Try autoplay (may be blocked)
+    audio.play().catch(() => {
+      // Add fallback interaction
+      const tryPlay = () => {
+        audio.play();
+        document.removeEventListener("click", tryPlay);
+        document.removeEventListener("touchstart", tryPlay);
+      };
+
+      document.addEventListener("click", tryPlay);
+      document.addEventListener("touchstart", tryPlay);
+    });
+  });
+</script>
+
+
+</body>
+</html>
